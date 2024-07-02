@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WELCOME TO DINNER TONIGHT</title>
+        <meta name="description" content="Sharing using DinnerTonightAU iPhone App.">
+        
+            <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Dinner Tonight AU">
+        <meta property="og:description" content="A share from Dinner Tonight AU">
+        <meta property="og:image" content="https://bray-morrow.github.io/dinnertonightau/images/DinnerTonightAU.png">
+        <meta property="og:url" content="https://bray-morrow.github.io/dinnertonightau">
+        <meta property="og:type" content="website">
+        
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        
+        <h1>Dinner Tonight AU Sharing</h1>
+        <h2>This is purely testing!</h2>
+        
+        <p>
+            Welcome to DinnerTonightAU, this should be useful for testing sharing using universal links only
+        </p>
+        
+        
+        <a href="images/DinnerTonightAU.png">
+            <img alt="A screenshot showing CSS Quick Edit" src="images/DinnerTonightAU.png"/>
+        </a>
+        
+        
+        <!-- 
+            Testing out sharing
+        -->
+        
+        
+        
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to create the app URL
+        function createAppUrl(shareId) {
+            const appScheme = "myapp://open?shareId=";
+            return appScheme + shareId;
+        }
+
+        // Get the shareId from the URL query parameters
+        const shareId = getQueryParam('share');
+
+        if (shareId) {
+            const appUrl = createAppUrl(shareId);
+            // Redirect to the app
+            window.location.href = appUrl;
+        } else {
+            document.getElementById('appLink').href = "#";
+        }
+    </script>
+        
+    <!--   
+    <script>
+        // Function to extract the part after "/share/"
+        function getShareId(url) {
+            const sharePrefix = "/share/";
+            const index = url.indexOf(sharePrefix);
+            if (index === -1) return null;
+            return url.substring(index + sharePrefix.length);
+        }
+
+        // Function to create the app URL
+        function createAppUrl(shareId) {
+            const appScheme = "myapp://open?shareId=";
+            return appScheme + shareId;
+        }
+
+        // Get the current URL
+        const currentUrl = window.location.href;
+        const shareId = getShareId(currentUrl);
+
+        if (shareId) {
+            const appUrl = createAppUrl(shareId);
+            // Redirect to the app
+            window.location.href = appUrl;
+        } else {
+            document.getElementById('appLink').href = "#";
+        }
+    </script>
+    --> 
+        
+        
+        
+    </body>
+</html>
+
