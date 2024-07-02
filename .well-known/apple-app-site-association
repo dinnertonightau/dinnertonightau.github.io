@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2B293P3PG5.com.BM.Dinner-Tonight-AU",
+        "paths": [ "/", "/*", "/dinnertonightau", "/dinnertonightau/*" ]
+      }
+    ]
+  }
+}
