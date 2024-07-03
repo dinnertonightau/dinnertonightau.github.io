@@ -1,10 +1,30 @@
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "2B293P3PG5.com.BM.Dinner-Tonight-AU",
-        "paths": [ "/", "/*", "/share", "/share/*" ]
+        "appIDs": ["2B293P3PG5.com.BM.Dinner-Tonight-AU"],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches any URL"
+          },
+          {
+            "/": "/",
+            "comment": "Matches the root URL"
+          },
+          {
+            "/": "/*",
+            "comment": "Matches any URL under the root"
+          },
+          {
+            "/": "/share=*",
+            "comment": "Matches any URL with /share= and any value"
+          },
+          {
+            "/": "/share/*",
+            "comment": "Matches any URL under /share/"
+          }
+        ]
       }
     ]
   }
