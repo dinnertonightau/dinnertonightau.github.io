@@ -9,7 +9,7 @@
         <meta name="description" content="Sharing using DinnerTonightAU iPhone App.">
         
             <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Dinner Tonight AU">
+        <meta property="og:title" content="DinnerTonightAU Share">
         <meta property="og:description" content="A share from Dinner Tonight AU">
         <meta property="og:image" content="https://dinnertonightau.github.io/images/DinnerTonightAU.png">
         <meta property="og:url" content="https://dinnertonightau.github.io">
@@ -19,25 +19,65 @@
     </head>
     <body>
         
-        <h1>Dinner Tonight AU Sharing</h1>
-        <h2>This is purely testing!</h2>
+        <h1>Welcome to DinnerTonightAU!</h1>
+        
+        <h2>Create and share recipes.</h2>
+        <h2>Keep on top of your groceries with shopping lists.</h2>
+        <h2>Organise and plan your meals with the meal planner.</h2>
         
         <p>
-            Welcome to DinnerTonightAU, this should be useful for testing sharing using universal links only
+            Efficiently organise your meals and weekly grocery shopping with DinnerTonightAU. Collaborate and share with friends and family to make life a bit easier. What are you having for Dinner Tonight?!
         </p>
         
-        
-        <a href="images/DinnerTonightAU.png">
+                 
+        <!-- <a href="images/DinnerTonightAU.png"> -->
+        <a>
             <img alt="A screenshot showing CSS Quick Edit" src="images/DinnerTonightAU.png"/>
         </a>
         
+        
+            <!-- Script to update Meta Tags for Previews -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to get the URL parameters
+            function getUrlParameters() {
+                var params = new URLSearchParams(window.location.search);
+                var paramObj = {};
+                params.forEach(function(value, key) {
+                    paramObj[key] = value;
+                });
+                return paramObj;
+            }
+
+            // Function to update meta tags
+            function updateMetaTags(params) {
+                if (params.type) {
+                    var ogTitleContent = "Default Title"; // Default value if needed
+                    if (params.type === 'recipe') {
+                        ogTitleContent = "Recipe Page";
+                    } else if (params.type === 'article') {
+                        ogTitleContent = "Article Page";
+                    }
+                    // You can add more conditions based on different 'type' values
+
+                    document.querySelector('meta[property="og:title"]').setAttribute('content', ogTitleContent);
+                }
+            }
+
+            // Get URL parameters
+            var params = getUrlParameters();
+
+            // Update meta tags
+            updateMetaTags(params);
+        });
+        </script>
         
         <!-- 
             Testing out sharing
         -->
         
         
-        
+        <!--   
     <script>
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -60,7 +100,9 @@
         } else {
             document.getElementById('appLink').href = "#";
         }
-    </script>
+    </script> 
+        -->
+        
         
     <!--   
     <script>
