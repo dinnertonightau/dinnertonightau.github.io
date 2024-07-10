@@ -37,7 +37,51 @@
         
         
         
+    <script>
+                
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to create the app URL
+        function createAppUrl(shareId) {
+            const appScheme = "dinnertonightau://";
+            return appScheme + shareId;
+        }
+
+        window.onload = function () {
+            const isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent); 
+            if (isMobile) {
+                console.log( document.referrer )
+                
+                const isUserComingFromInstagramReferral = document.referrer.includes("instagram");
+                /*if (isUserComingFromInstagramReferral) {*/
+                    
+                            // Get the shareId from the URL query parameters
+                    const shareId = getQueryParam('id');
+                    console.log(shareId)
+
+                    if (shareId) {
+                        const appUrl = createAppUrl(shareId);
+                        // Redirect to the app
+                        console.log("App URL: ", appUrl);
+                        window.location.href = appUrl;
+                    } 
+                    /*
+                    setTimeout(function () { 
+                    // wait a second and then to go App Store or your Website
+                    // if the user hasn't installed yet.
+                      window.location = "your-web-site-or-app-store-link";
+                    }, 1000); */
+                /*}*/
+            }
+            else {
+                console.log("Not a mobile");
+            }
+        }
         
+    </script> 
         
         
         
@@ -86,44 +130,7 @@
         
         
 
-    <script>
-        
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
 
-        // Function to create the app URL
-        function createAppUrl(shareId) {
-            const appScheme = "dinnertonightau://";
-            return appScheme + shareId;
-        }
-
-        window.onload = function () {
-            const isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent); 
-            if (isMobile) {
-                const isUserComingFromInstagramReferral = document.referrer.includes("instagram");
-                if (isUserComingFromInstagramReferral) {
-                    
-                            // Get the shareId from the URL query parameters
-                    const shareId = getQueryParam('id');
-
-                    if (shareId) {
-                        const appUrl = createAppUrl(shareId);
-                        // Redirect to the app
-                        window.location.href = appUrl;
-                    } 
-                    /*
-                    setTimeout(function () { 
-                    // wait a second and then to go App Store or your Website
-                    // if the user hasn't installed yet.
-                      window.location = "your-web-site-or-app-store-link";
-                    }, 1000); */
-                }
-            }
-        }
-        
-    </script> 
 
         
         
